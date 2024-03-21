@@ -8,7 +8,9 @@ part of 'connectivity_check.provider.dart';
 
 String _$connectivityCheckHash() => r'78ba4b0ef116b2dbc7d7fb37efd3b466e5e604a9';
 
-/// See also [connectivityCheck].
+/// Riverpod provider for connection checking.
+///
+/// Copied from [connectivityCheck].
 @ProviderFor(connectivityCheck)
 final connectivityCheckProvider = AutoDisposeProvider<ConnectionCheck>.internal(
   connectivityCheck,
@@ -24,7 +26,9 @@ typedef ConnectivityCheckRef = AutoDisposeProviderRef<ConnectionCheck>;
 String _$connectivityStreamHash() =>
     r'821946b5ee81062711ade750a8c597368e640768';
 
-/// See also [connectivityStream].
+/// Riverpod provider for connection status stream.
+///
+/// Copied from [connectivityStream].
 @ProviderFor(connectivityStream)
 final connectivityStreamProvider = AutoDisposeStreamProvider<bool>.internal(
   connectivityStream,
