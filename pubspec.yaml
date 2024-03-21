@@ -41,6 +41,8 @@ dependencies:
   connectivity_plus: ^6.0.1
   internet_connection_checker: ^1.0.0+1
   package_info_plus: ^6.0.0
+  dio: ^5.4.1
+  talker_dio_logger: ^4.1.0
 
 
 dev_dependencies:

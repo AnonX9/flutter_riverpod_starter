@@ -8,7 +8,9 @@ part of 'package_info.dart';
 
 String _$packageInfoHash() => r'e3a794b5aae89af1a3aef7ccab677bae7a80a6c7';
 
-/// See also [packageInfo].
+/// Riverpod provider for retrieving package information.
+///
+/// Copied from [packageInfo].
 @ProviderFor(packageInfo)
 final packageInfoProvider = AutoDisposeFutureProvider<PackageInfo>.internal(
   packageInfo,
