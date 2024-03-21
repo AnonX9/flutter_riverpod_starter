@@ -29,16 +29,24 @@ class _SystemHash {
   }
 }
 
-/// See also [httpClient].
+/// Riverpod provider for creating an HTTP client using Dio.
+///
+/// Copied from [httpClient].
 @ProviderFor(httpClient)
 const httpClientProvider = HttpClientFamily();
 
-/// See also [httpClient].
+/// Riverpod provider for creating an HTTP client using Dio.
+///
+/// Copied from [httpClient].
 class HttpClientFamily extends Family<Dio> {
-  /// See also [httpClient].
+  /// Riverpod provider for creating an HTTP client using Dio.
+  ///
+  /// Copied from [httpClient].
   const HttpClientFamily();
 
-  /// See also [httpClient].
+  /// Riverpod provider for creating an HTTP client using Dio.
+  ///
+  /// Copied from [httpClient].
   HttpClientProvider call({
     bool enableLogging = true,
   }) {
@@ -71,9 +79,13 @@ class HttpClientFamily extends Family<Dio> {
   String? get name => r'httpClientProvider';
 }
 
-/// See also [httpClient].
+/// Riverpod provider for creating an HTTP client using Dio.
+///
+/// Copied from [httpClient].
 class HttpClientProvider extends AutoDisposeProvider<Dio> {
-  /// See also [httpClient].
+  /// Riverpod provider for creating an HTTP client using Dio.
+  ///
+  /// Copied from [httpClient].
   HttpClientProvider({
     bool enableLogging = true,
   }) : this._internal(
