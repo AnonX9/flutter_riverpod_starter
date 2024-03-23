@@ -6,47 +6,34 @@ import '../objectbox.g.dart';
 
 part 'local_db.client.g.dart';
 
-class ObjectBox {
-  /// The Store of this app.
-  late final Store store;
+/// Manages the ObjectBox instance and provides access to entity boxes.
+class ObjectBoxManager {
+  late final Store _store;
 
-  ObjectBox._create(this.store) {
-    // Add any additional setup code, e.g. build queries.
+  ObjectBoxManager._create(this._store);
+
+  /// Initializes ObjectBox and returns an instance of ObjectBoxManager.
+  static Future<ObjectBoxManager> init() async {
+    final docsDir = await path_provider.getApplicationDocumentsDirectory();
+    final store = await openStore(directory: p.join(docsDir.path, "obx-frn"));
+    return ObjectBoxManager._create(store);
   }
 
-  /// Create an instance of ObjectBox to use throughout the app.
-  static Future<ObjectBox> create() async {
-    final docsDir = await path_provider.getApplicationDocumentsDirectory();
-    final store =
-        await openStore(directory: p.join(docsDir.path, "obx-example"));
-    return ObjectBox._create(store);
+  /// Gets a box for a specified data model entity type [T].
+  ///
+  /// Use this method to access the ObjectBox box for a specific data model entity.
+  /// For example:
+  /// ```
+  /// final noteBox = objectBoxManager.getBox<Note>();
+  /// ```
+  Box<T> getBox<T extends Object>() {
+    return _store.box<T>();
   }
 }
 
 //TODO: Should be tested
 /// Riverpod provider for creating a local ObjectBox database instance.
 @riverpod
-Future<ObjectBox> localDb(LocalDbRef ref) async {
-  final objectBox = await ObjectBox.create();
-  return objectBox;
+Future<ObjectBoxManager> localDb(LocalDbRef ref) async {
+  return await ObjectBoxManager.init();
 }
-
-/*
-@riverpod
-Future<ObjectBox> localDb(LocalDbRef ref) async {
-  // Get the application documents directory
-  final dir = await path_provider.getApplicationDocumentsDirectory();
-
-  /// The Store of this app.
-  late final Store store;
-
-  // Initialize ObjectBox database with specified schema and options
-  final boxStore = await BoxStore.open(
-    directory: dir.path,
-    model: ObjectBoxModel()..registerEntity(LocalCurrentWeatherModel),
-    maxDBSizeInKB: 2 * 1024 * 1024, // 2 MB (ObjectBox uses KB for maxDBSize)
-  );
-
-  return boxStore;
-}
-*/
