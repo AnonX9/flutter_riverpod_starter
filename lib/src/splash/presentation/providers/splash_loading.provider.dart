@@ -7,5 +7,5 @@ part 'splash_loading.provider.g.dart';
 /// Riverpod provider for handling splash screen loading logic.
 @riverpod
 FutureOr<void> splashLoading(SplashLoadingRef ref) {
-  return ref.watch(localDbProvider.future);
+  return ref.watch(localDbProvider);
 }

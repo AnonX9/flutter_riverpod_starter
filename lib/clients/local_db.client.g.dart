@@ -6,13 +6,13 @@ part of 'local_db.client.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$localDbHash() => r'82d4cbbf0b78b1c855bff4d9107ac9fb801a16be';
+String _$localDbHash() => r'ecfda335a75f41d2ca7118fcc4f37fdc39bff5a7';
 
 /// Riverpod provider for creating a local ObjectBox database instance.
 ///
 /// Copied from [localDb].
 @ProviderFor(localDb)
-final localDbProvider = AutoDisposeFutureProvider<ObjectBoxManager>.internal(
+final localDbProvider = AutoDisposeProvider<ObjectBoxManager>.internal(
   localDb,
   name: r'localDbProvider',
   debugGetCreateSourceHash:
@@ -21,6 +21,6 @@ final localDbProvider = AutoDisposeFutureProvider<ObjectBoxManager>.internal(
   allTransitiveDependencies: null,
 );
 
-typedef LocalDbRef = AutoDisposeFutureProviderRef<ObjectBoxManager>;
+typedef LocalDbRef = AutoDisposeProviderRef<ObjectBoxManager>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member

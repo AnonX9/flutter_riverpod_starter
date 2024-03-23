@@ -34,6 +34,6 @@ class ObjectBoxManager {
 //TODO: Should be tested
 /// Riverpod provider for creating a local ObjectBox database instance.
 @riverpod
-Future<ObjectBoxManager> localDb(LocalDbRef ref) async {
-  return await ObjectBoxManager.init();
+ObjectBoxManager localDb(LocalDbRef ref) {
+  throw UnimplementedError("DO NOT access this provider directly.");
 }

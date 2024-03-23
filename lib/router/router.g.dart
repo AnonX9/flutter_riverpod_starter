@@ -8,7 +8,9 @@ part of 'router.dart';
 
 String _$routerHash() => r'eb8fd8a23f8de0ae0f09f08f3713c2992508dfd1';
 
-/// See also [router].
+/// Riverpod provider for creating and configuring the GoRouter instance.
+///
+/// Copied from [router].
 @ProviderFor(router)
 final routerProvider = AutoDisposeProvider<GoRouter>.internal(
   router,
@@ -22,7 +24,9 @@ final routerProvider = AutoDisposeProvider<GoRouter>.internal(
 typedef RouterRef = AutoDisposeProviderRef<GoRouter>;
 String _$initialLocationHash() => r'd728fe399ea383d7607a72ba504a8d4b021c0a48';
 
-/// See also [initialLocation].
+/// Riverpod provider for determining the initial location of the router.
+///
+/// Copied from [initialLocation].
 @ProviderFor(initialLocation)
 final initialLocationProvider = AutoDisposeProvider<String>.internal(
   initialLocation,

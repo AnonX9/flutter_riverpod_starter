@@ -6,9 +6,11 @@ part of 'splash_loading.provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$splashLoadingHash() => r'191e49795547de9b74d1f758be665a959f837267';
+String _$splashLoadingHash() => r'ad6e81a8b07b38bf73f9e8298c6e861faf43a5c2';
 
-/// See also [splashLoading].
+/// Riverpod provider for handling splash screen loading logic.
+///
+/// Copied from [splashLoading].
 @ProviderFor(splashLoading)
 final splashLoadingProvider = AutoDisposeFutureProvider<void>.internal(
   splashLoading,
