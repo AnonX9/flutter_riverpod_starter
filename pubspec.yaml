@@ -25,6 +25,7 @@ dependencies:
   objectbox: ^2.5.1
   objectbox_flutter_libs: any
   go_router: ^13.2.1
+  flutter_animate: ^4.5.0
 
 
 dev_dependencies:
