@@ -6,7 +6,7 @@ part of 'http.client.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$httpClientHash() => r'0a40adc15d1676950e96327811a188f2a852a426';
+String _$httpClientHash() => r'1448371230e75e4c4f5454a3448c6ea3b64f3bac';
 
 /// Copied from Dart SDK
 class _SystemHash {
