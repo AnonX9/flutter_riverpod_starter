@@ -6,6 +6,7 @@ import '../src/splash/presentation/pages/splash_page.dart';
 
 part 'config.routes.g.dart';
 
+/// TypedGoRoute for the home route of the application.
 @TypedGoRoute<HomeRoute>(path: '/')
 class HomeRoute extends GoRouteData {
   const HomeRoute();
@@ -16,6 +17,7 @@ class HomeRoute extends GoRouteData {
   }
 }
 
+/// TypedGoRoute for the splash route of the application.
 @TypedGoRoute<SplashRoute>(path: '/splash')
 class SplashRoute extends GoRouteData {
   const SplashRoute();

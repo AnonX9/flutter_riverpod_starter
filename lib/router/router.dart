@@ -8,6 +8,7 @@ import 'config.routes.dart';
 
 part 'router.g.dart';
 
+/// Riverpod provider for creating and configuring the GoRouter instance.
 @riverpod
 GoRouter router(RouterRef ref) {
   final key = GlobalKey<NavigatorState>(debugLabel: 'routerKey');
@@ -25,5 +26,6 @@ GoRouter router(RouterRef ref) {
   return router;
 }
 
+/// Riverpod provider for determining the initial location of the router.
 @riverpod
 String initialLocation(InitialLocationRef ref) => '/splash';
