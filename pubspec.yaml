@@ -24,6 +24,7 @@ dependencies:
   talker_dio_logger: ^4.1.0
   objectbox: ^2.5.1
   objectbox_flutter_libs: any
+  go_router: ^13.2.1
 
 
 dev_dependencies:
@@ -31,11 +32,13 @@ dev_dependencies:
     sdk: flutter
 
   flutter_lints: ^3.0.0
-  riverpod_generator: ^2.4.0
-  build_runner: ^2.4.8
   custom_lint: ^0.6.4
   riverpod_lint: ^2.3.10
+
   objectbox_generator: any
+  riverpod_generator: ^2.4.0
+  build_runner: ^2.4.8
+  go_router_builder: ^2.4.1
 
 flutter:
 
