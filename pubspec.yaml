@@ -28,7 +28,9 @@ dependencies:
   flutter_animate: ^4.5.0
   flex_color_scheme: ^7.3.1
   google_fonts: ^6.2.1
-
+  flutter_localizations:
+    sdk: flutter
+  intl: any
 
 dev_dependencies:
   flutter_test:
@@ -37,15 +39,14 @@ dev_dependencies:
   flutter_lints: ^3.0.0
   custom_lint: ^0.6.4
   riverpod_lint: ^2.3.10
-
   objectbox_generator: any
   riverpod_generator: ^2.4.0
   build_runner: ^2.4.8
   go_router_builder: ^2.4.1
 
 flutter:
-
   uses-material-design: true
+  generate: true
 
   # To add assets to your application, add an assets section, like this:
   # assets:

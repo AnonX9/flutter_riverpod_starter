@@ -5,23 +5,26 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'connectivity_check.provider.g.dart';
 
 /// Typedef for the connection check function.
-typedef ConnectionCheck = ({Connectivity lanCheck, InternetConnectionChecker wanCheck});
+typedef ConnectionCheck = ({
+  Connectivity lanCheck,
+  InternetConnectionChecker wanCheck
+});
 
-/// Riverpod provider for connection checking.
+/// A Riverpod provider that creates and manages connectivity checks.
 @riverpod
 ConnectionCheck connectivityCheck(ConnectivityCheckRef ref) {
   // Keep the provider alive during hot restarts
   ref.keepAlive();
 
-  // Initialize connectivity check instances
+  // Initialize LAN and WAN connectivity check instances
   final lanConnectivity = Connectivity();
   final wanConnectivity = InternetConnectionChecker.createInstance();
 
-  // Return the connection check function
+  // Return the connection check function with LAN and WAN checks
   return (lanCheck: lanConnectivity, wanCheck: wanConnectivity);
 }
 
-/// Riverpod provider for connection status stream.
+/// A Riverpod provider for a continuous stream of connectivity status.
 @riverpod
 Stream<bool> connectivityStream(ConnectivityStreamRef ref) {
   // Watch the connection check provider for changes
@@ -33,7 +36,7 @@ Stream<bool> connectivityStream(ConnectivityStreamRef ref) {
 
 /// Extension on ConnectionCheck for additional connectivity check methods.
 extension ConnectionCheckExtension on ConnectionCheck {
-  /// Asynchronous method to check full connectivity status.
+  /// Asynchronously checks the full connectivity status including LAN and WAN.
   Future<bool> checkFullConnectivity() async {
     final lanConnectionStatus = await lanCheck.checkConnectivity();
     if (lanConnectionStatus == ConnectivityResult.none) return false;
@@ -42,19 +45,19 @@ extension ConnectionCheckExtension on ConnectionCheck {
     return wanConnectionStatus;
   }
 
-  /// Asynchronous stream generator for full connectivity status.
+  /// Generates a continuous stream of full connectivity status including LAN and WAN.
   Stream<bool> get fullConnectivityStream async* {
     await for (final lanChange in lanCheck.onConnectivityChanged) {
       if (lanChange == ConnectivityResult.none) {
-        yield false;
+        yield false; // No LAN connection, yield false
         continue;
       }
 
       final wanChange = wanCheck.onStatusChange.map(
-            (event) => event == InternetConnectionStatus.connected,
+        (event) => event == InternetConnectionStatus.connected,
       );
 
-      yield* wanChange;
+      yield* wanChange; // Yield WAN connection status changes
     }
   }
 }
