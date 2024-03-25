@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_riverpod_starter/router/router.dart';
+import 'package:flutter_riverpod_starter/theme/dark_theme.dart';
+import 'package:flutter_riverpod_starter/theme/light_theme.dart';
 
 /// Widget representing the entry point of the application.
 class AppEntry extends ConsumerWidget {
@@ -15,10 +17,8 @@ class AppEntry extends ConsumerWidget {
     return MaterialApp.router(
       routerConfig: router,
       title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
+      theme: lightTheme,
+      darkTheme: darkTheme,
     );
   }
 }
