@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod_starter/src/home/presentation/home_page.dart';
-import 'package:flutter_riverpod_starter/src/shared/presentation/extensions/app_extensions.dart';
 import 'package:go_router/go_router.dart';
 
 import '../src/splash/presentation/pages/splash_page.dart';
@@ -14,7 +13,7 @@ class HomeRoute extends GoRouteData {
 
   @override
   Widget build(BuildContext context, GoRouterState state) {
-    return HomePage(title: context.L.counterAppBarTitle);
+    return CounterApp();
   }
 }
 

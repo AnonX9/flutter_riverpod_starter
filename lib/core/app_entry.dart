@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_riverpod_starter/router/router.dart';
-import 'package:flutter_riverpod_starter/theme/dark_theme.dart';
-import 'package:flutter_riverpod_starter/theme/light_theme.dart';
+import 'package:flutter_riverpod_starter/utils/sizer/sizer.dart';
 
+import '../constants.dart';
 import '../l10n/gen/app_localizations.dart';
+import '../theme/dark_theme.dart';
+import '../theme/light_theme.dart';
 
 /// Widget representing the entry point of the application.
 class AppEntry extends ConsumerWidget {
@@ -16,13 +18,16 @@ class AppEntry extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final router = ref.watch(routerProvider);
 
-    return MaterialApp.router(
-      routerConfig: router,
-      title: 'Flutter Demo',
-      theme: lightTheme,
-      darkTheme: darkTheme,
-      localizationsDelegates: AppLocalizations.localizationsDelegates,
-      supportedLocales: AppLocalizations.supportedLocales,
+    return Sizer(
+      builder: (context, orientation, deviceType) => MaterialApp.router(
+        routerConfig: router,
+        title: 'Flutter Demo',
+        theme: lightTheme,
+        darkTheme: darkTheme,
+        scaffoldMessengerKey: networkSnackbarKey,
+        localizationsDelegates: AppLocalizations.localizationsDelegates,
+        supportedLocales: AppLocalizations.supportedLocales,
+      ),
     );
   }
 }

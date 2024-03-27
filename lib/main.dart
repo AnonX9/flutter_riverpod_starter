@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_riverpod_starter/clients/connection_status_listener.dart';
 import 'package:flutter_riverpod_starter/clients/local_db.client.dart';
 import 'package:flutter_riverpod_starter/logs/app_provider_observer.dart';
 import 'package:stack_trace/stack_trace.dart';
@@ -21,6 +22,8 @@ Future<void> main() async {
         },
         details.exceptionAsString(),
       );
+
+  initNoInternetListener();
 
   runApp(
     ProviderScope(
