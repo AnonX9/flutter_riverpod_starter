@@ -34,7 +34,7 @@ class CounterApp extends ConsumerWidget {
         onPressed: () async {
           counterNotifier.incrementCounter();
         },
-        tooltip: 'Increment',
+        tooltip: 'tooltip',
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );

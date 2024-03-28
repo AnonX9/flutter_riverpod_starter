@@ -120,7 +120,7 @@ void showSnackBar(String msg) {
   networkSnackbarKey.currentState?.showSnackBar(snackBar);
 }
 
-initNoInternetListener() async {
+Future<void> initNoInternetListener() async {
   var connectionStatus = ConnectionStatusListener.getInstance();
   await connectionStatus.initialize();
   if (!connectionStatus.hasConnection) {
@@ -130,4 +130,6 @@ initNoInternetListener() async {
     print("initNoInternetListener $event");
     updateConnectivity(event, connectionStatus);
   });
+
+  talker.info("Connection Status Listiners initialized !");
 }
