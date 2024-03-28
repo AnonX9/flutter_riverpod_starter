@@ -8,34 +8,35 @@ import 'package:flutter_riverpod_starter/utils/sizer/sizer.dart';
 
 import '../constants.dart';
 
+/// A class responsible for monitoring and managing the connection status.
 class ConnectionStatusListener {
-  //This creates the single instance by calling the `_internal` constructor specified below
+  // This creates the single instance by calling the `_internal` constructor specified below
   static final _singleton = ConnectionStatusListener._internal();
 
   ConnectionStatusListener._internal();
 
   bool hasShownNoInternet = false;
 
-  //connectivity_plus
+  // Connectivity Plus instance
   final Connectivity _connectivity = Connectivity();
 
-  //This is what's used to retrieve the instance through the app
+  // This is what's used to retrieve the instance through the app
   static ConnectionStatusListener getInstance() => _singleton;
 
-  //This tracks the current connection status
+  // This tracks the current connection status
   bool hasConnection = false;
 
-  //This is how we'll allow subscribing to connection changes
+  // This is how we'll allow subscribing to connection changes
   StreamController connectionChangeController = StreamController.broadcast();
 
   Stream get connectionChange => connectionChangeController.stream;
 
-  //flutter_connectivity's listener
+  // Flutter Connectivity's listener
   void _connectionChange(List<ConnectivityResult>? result) {
     checkConnection();
   }
 
-  //The test to actually see if there is a connection
+  // The test to actually see if there is a connection
   Future<bool> checkConnection() async {
     bool previousConnection = hasConnection;
 
@@ -50,7 +51,7 @@ class ConnectionStatusListener {
       hasConnection = false;
     }
 
-    //The connection status changed send out an update to all listeners
+    // The connection status changed send out an update to all listeners
     if (previousConnection != hasConnection) {
       connectionChangeController.add(hasConnection);
     }
@@ -58,21 +59,22 @@ class ConnectionStatusListener {
     return hasConnection;
   }
 
-  //Hook into connectivity_plus's Stream to listen for changes
-  //And check the connection status out of the gate
+  // Hook into Connectivity Plus's Stream to listen for changes
+  // And check the connection status out of the gate
   Future<void> initialize() async {
     _connectivity.onConnectivityChanged.listen(_connectionChange);
     await checkConnection();
   }
 
-  //A clean up method to close our StreamController
-  //Because this is meant to exist through the entire application life cycle this isn't really an issue
+  // A clean-up method to close our StreamController
+  // Because this is meant to exist through the entire application life cycle this isn't really an issue
   void dispose() {
     connectionChangeController.close();
   }
 }
 
-updateConnectivity(
+/// Updates the connectivity status and displays a snackbar accordingly.
+void updateConnectivity(
   dynamic hasConnection,
   ConnectionStatusListener connectionStatus,
 ) {
@@ -89,6 +91,7 @@ updateConnectivity(
   }
 }
 
+/// Displays a snackbar with the provided message and styling.
 void showSnackBar(String msg) {
   bool offline = (msg == "offline");
   MaterialColor? bgColor = offline ? Colors.red : null;
@@ -120,6 +123,7 @@ void showSnackBar(String msg) {
   networkSnackbarKey.currentState?.showSnackBar(snackBar);
 }
 
+/// Initializes the listener for no internet connection.
 Future<void> initNoInternetListener() async {
   var connectionStatus = ConnectionStatusListener.getInstance();
   await connectionStatus.initialize();
@@ -131,5 +135,5 @@ Future<void> initNoInternetListener() async {
     updateConnectivity(event, connectionStatus);
   });
 
-  talker.info("Connection Status Listiners initialized !");
+  talker.info("Connection Status Listeners initialized !");
 }
