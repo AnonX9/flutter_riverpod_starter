@@ -1,10 +1,10 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_riverpod_starter/router/router.dart';
 import 'package:flutter_riverpod_starter/utils/sizer/sizer.dart';
 
 import '../constants.dart';
-import '../l10n/gen/app_localizations.dart';
 import '../theme/dark_theme.dart';
 import '../theme/light_theme.dart';
 
@@ -25,8 +25,9 @@ class AppEntry extends ConsumerWidget {
         theme: lightTheme,
         darkTheme: darkTheme,
         scaffoldMessengerKey: networkSnackbarKey,
-        localizationsDelegates: AppLocalizations.localizationsDelegates,
-        supportedLocales: AppLocalizations.supportedLocales,
+        localizationsDelegates: context.localizationDelegates,
+        supportedLocales: context.supportedLocales,
+        locale: context.locale,
       ),
     );
   }

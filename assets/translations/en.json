@@ -1,0 +1,8 @@
+{
+  "counterAppTitle": "Counter",
+  "pushedBtnText": {
+    "zero": "You have'nt pushed the button yet",
+    "other": "You pushed the button this many time : "
+  },
+  "tooltip": "tooltip"
+}

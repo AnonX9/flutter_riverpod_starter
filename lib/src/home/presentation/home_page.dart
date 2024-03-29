@@ -1,7 +1,7 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_riverpod_starter/src/home/presentation/providers/counter_provider.dart';
-import 'package:flutter_riverpod_starter/utils/extensions/app_extensions.dart';
 
 class CounterApp extends ConsumerWidget {
   const CounterApp({super.key});
@@ -14,13 +14,13 @@ class CounterApp extends ConsumerWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(context.L.counterAppTitle),
+        title: Text('counterAppTitle'.tr()),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(context.L.counterText(counter)),
+            Text('pushedBtnText'.plural(counter)),
             Text(
               '${counter}',
               style: Theme.of(context).textTheme.headlineMedium,
@@ -32,7 +32,7 @@ class CounterApp extends ConsumerWidget {
         onPressed: () async {
           counterNotifier.incrementCounter();
         },
-        tooltip: context.L.addBtnTooltip,
+        tooltip: 'tooltip'.tr(),
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
