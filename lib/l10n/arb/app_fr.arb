@@ -1,7 +1,6 @@
 {
-    "@@locale": "fr",
-    "counterAppBarTitle": "Compteur",
-    "@counterAppBarTitle": {
-        "description": "Texte affiché dans la AppBar de la page Compteur"
-    }
+    "@@last_modified": "2024-03-29T17:08:27.972294",
+    "counterText": "{counter,plural, =0{Vous n''avez pas encore appuyé sur le bouton}other{Vous avez appuyé sur le bouton ce nombre de fois :}}",
+    "addBtnTooltip": "info-bulle",
+    "counterAppTitle": "Compteur"
 }

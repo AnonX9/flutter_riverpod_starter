@@ -95,11 +95,23 @@ abstract class AppLocalizations {
     Locale('fr')
   ];
 
-  /// Text shown in the AppBar of the Counter Page
+  /// No description provided for @counterText.
+  ///
+  /// In en, this message translates to:
+  /// **'{counter,plural, =0{You haven\'\'t pushed the button yet}other{You have pushed the button this many times}}'**
+  String counterText(num counter);
+
+  /// No description provided for @addBtnTooltip.
+  ///
+  /// In en, this message translates to:
+  /// **'tooltip'**
+  String get addBtnTooltip;
+
+  /// No description provided for @counterAppTitle.
   ///
   /// In en, this message translates to:
   /// **'Counter'**
-  String get counterAppBarTitle;
+  String get counterAppTitle;
 }
 
 class _AppLocalizationsDelegate
