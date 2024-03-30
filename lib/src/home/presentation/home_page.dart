@@ -20,7 +20,7 @@ class CounterApp extends ConsumerWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text('pushedBtnText'.plural(counter)),
+            Text(plural('pushedBtnText', 0), textAlign: TextAlign.center),
             Text(
               '${counter}',
               style: Theme.of(context).textTheme.headlineMedium,
