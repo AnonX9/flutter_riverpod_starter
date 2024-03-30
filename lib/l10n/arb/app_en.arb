@@ -1,0 +1,20 @@
+{
+  "@@last_modified": "2024-03-29T19:57:39.205049",
+  "counterText": "{counter,plural, =0{You haven''t pushed the button yet}other{You have pushed the button this many times}}",
+  "@counterText": {
+    "type": "text",
+    "placeholders": {
+      "counter": {}
+    }
+  },
+  "addBtnTooltip": "tooltip",
+  "@addBtnTooltip": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "counterAppTitle": "Counter",
+  "@counterAppTitle": {
+    "type": "text",
+    "placeholders": {}
+  }
+}
