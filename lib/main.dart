@@ -26,7 +26,7 @@ Future<void> main() async {
         details.exceptionAsString(),
       );
 
-  await initNoInternetListener();
+  // await initNoInternetListener();
 
   runApp(
     ProviderScope(
