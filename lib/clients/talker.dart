@@ -6,7 +6,8 @@ import 'package:talker_flutter/talker_flutter.dart';
 final talker = Talker(
   logger: TalkerLogger(
     // Define the output method for logging messages
-    output: (String message) => message.split('\n').forEach(debugPrintSynchronously),
+    output: (String message) =>
+        message.split('\n').forEach(debugPrintSynchronously),
     // Configure logger settings such as colors, log level, and maximum line width
     settings: TalkerLoggerSettings(
       colors: {
