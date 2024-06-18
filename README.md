@@ -1,3 +1,10 @@
+![Flutter](https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white)  &nbsp;  ![Dart](https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white) &nbsp; [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/) 
+<p align="center">
+  <img src="https://github.com/rrousselGit/riverpod/blob/master/resources/icon/Facebook%20Cover%20A.png?raw=true" width="100%" alt="Riverpod" />
+</p>
+
+---
+
 # Project: Flutter Riverpod Starter
 
 This is a Flutter application that serves as a starter template for using Riverpod in Flutter. It provides a basic structure and setup for using Riverpod, a state management solution for Flutter.
