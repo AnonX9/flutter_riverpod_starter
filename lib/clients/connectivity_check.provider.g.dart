@@ -6,9 +6,16 @@ part of 'connectivity_check.provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$connectivityCheckHash() => r'78ba4b0ef116b2dbc7d7fb37efd3b466e5e604a9';
+String _$connectivityCheckHash() => r'105dfd14dfd7270eea7f8d9d661d3ae509f22b22';
 
 /// A Riverpod provider that creates and manages connectivity checks.
+///
+/// This provider initializes two instances of `Connectivity` and `InternetConnectionChecker`
+/// respectively, and returns a function that performs LAN and WAN connectivity checks. The
+/// function takes in two parameters: `lanCheck` and `wanCheck`, which are instances of the
+/// `Connectivity` and `InternetConnectionChecker` classes respectively.
+///
+/// The provider also keeps the provider alive during hot restarts.
 ///
 /// Copied from [connectivityCheck].
 @ProviderFor(connectivityCheck)
@@ -24,9 +31,12 @@ final connectivityCheckProvider = AutoDisposeProvider<ConnectionCheck>.internal(
 
 typedef ConnectivityCheckRef = AutoDisposeProviderRef<ConnectionCheck>;
 String _$connectivityStreamHash() =>
-    r'821946b5ee81062711ade750a8c597368e640768';
+    r'a873f4ba5dd0b9f5a470f7c7aa782041537a9732';
 
 /// A Riverpod provider for a continuous stream of connectivity status.
+///
+/// This provider watches the [connectivityCheckProvider] for changes and returns
+/// the full connectivity status stream.
 ///
 /// Copied from [connectivityStream].
 @ProviderFor(connectivityStream)

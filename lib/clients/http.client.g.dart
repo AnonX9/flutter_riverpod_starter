@@ -6,7 +6,7 @@ part of 'http.client.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$httpClientHash() => r'1448371230e75e4c4f5454a3448c6ea3b64f3bac';
+String _$httpClientHash() => r'd8e0d9d642601920e0a6af1dc3377ca536ec3c5b';
 
 /// Copied from Dart SDK
 class _SystemHash {
@@ -31,20 +31,48 @@ class _SystemHash {
 
 /// Riverpod provider for creating an HTTP client using Dio.
 ///
+/// This provider configures the base options for the Dio client,
+/// creates the client instance with the configured options,
+/// registers a cleanup function to close the client when no longer needed,
+/// adds a TalkerDioLogger interceptor if logging is enabled,
+/// adds DioExceptionInterceptor and ResponseInterceptor interceptors,
+/// and returns the configured Dio client.
+///
 /// Copied from [httpClient].
 @ProviderFor(httpClient)
 const httpClientProvider = HttpClientFamily();
 
 /// Riverpod provider for creating an HTTP client using Dio.
 ///
+/// This provider configures the base options for the Dio client,
+/// creates the client instance with the configured options,
+/// registers a cleanup function to close the client when no longer needed,
+/// adds a TalkerDioLogger interceptor if logging is enabled,
+/// adds DioExceptionInterceptor and ResponseInterceptor interceptors,
+/// and returns the configured Dio client.
+///
 /// Copied from [httpClient].
 class HttpClientFamily extends Family<Dio> {
   /// Riverpod provider for creating an HTTP client using Dio.
+  ///
+  /// This provider configures the base options for the Dio client,
+  /// creates the client instance with the configured options,
+  /// registers a cleanup function to close the client when no longer needed,
+  /// adds a TalkerDioLogger interceptor if logging is enabled,
+  /// adds DioExceptionInterceptor and ResponseInterceptor interceptors,
+  /// and returns the configured Dio client.
   ///
   /// Copied from [httpClient].
   const HttpClientFamily();
 
   /// Riverpod provider for creating an HTTP client using Dio.
+  ///
+  /// This provider configures the base options for the Dio client,
+  /// creates the client instance with the configured options,
+  /// registers a cleanup function to close the client when no longer needed,
+  /// adds a TalkerDioLogger interceptor if logging is enabled,
+  /// adds DioExceptionInterceptor and ResponseInterceptor interceptors,
+  /// and returns the configured Dio client.
   ///
   /// Copied from [httpClient].
   HttpClientProvider call({
@@ -81,9 +109,23 @@ class HttpClientFamily extends Family<Dio> {
 
 /// Riverpod provider for creating an HTTP client using Dio.
 ///
+/// This provider configures the base options for the Dio client,
+/// creates the client instance with the configured options,
+/// registers a cleanup function to close the client when no longer needed,
+/// adds a TalkerDioLogger interceptor if logging is enabled,
+/// adds DioExceptionInterceptor and ResponseInterceptor interceptors,
+/// and returns the configured Dio client.
+///
 /// Copied from [httpClient].
 class HttpClientProvider extends AutoDisposeProvider<Dio> {
   /// Riverpod provider for creating an HTTP client using Dio.
+  ///
+  /// This provider configures the base options for the Dio client,
+  /// creates the client instance with the configured options,
+  /// registers a cleanup function to close the client when no longer needed,
+  /// adds a TalkerDioLogger interceptor if logging is enabled,
+  /// adds DioExceptionInterceptor and ResponseInterceptor interceptors,
+  /// and returns the configured Dio client.
   ///
   /// Copied from [httpClient].
   HttpClientProvider({

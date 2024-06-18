@@ -10,6 +10,12 @@ String _$routerHash() => r'eb8fd8a23f8de0ae0f09f08f3713c2992508dfd1';
 
 /// Riverpod provider for creating and configuring the GoRouter instance.
 ///
+/// This provider creates and configures a [GoRouter] instance. It sets up the
+/// initial location of the router and adds a [TalkerRouteObserver] to observe
+/// route changes. The routes are defined in the `config.routes.dart` file.
+/// The [GoRouter] instance is returned by this provider and can be accessed
+/// using the `ref.watch` function.
+///
 /// Copied from [router].
 @ProviderFor(router)
 final routerProvider = AutoDisposeProvider<GoRouter>.internal(

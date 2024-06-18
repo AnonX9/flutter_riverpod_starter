@@ -8,7 +8,17 @@ part of 'local_db.client.dart';
 
 String _$localDbHash() => r'ecfda335a75f41d2ca7118fcc4f37fdc39bff5a7';
 
-/// Riverpod provider for creating a local ObjectBox database instance.
+/// Creates an instance of [ObjectBoxManager] by accessing the local database.
+///
+/// This function is a provider for creating a local ObjectBox database instance.
+/// It is intended to be used as a dependency injection mechanism to provide
+/// an instance of [ObjectBoxManager] to other parts of the application.
+///
+/// This function throws an [UnimplementedError] with the message "DO NOT access this provider directly."
+/// to indicate that this function should not be called directly, but rather through
+/// the dependency injection mechanism provided by the framework.
+///
+/// Returns an instance of [ObjectBoxManager].
 ///
 /// Copied from [localDb].
 @ProviderFor(localDb)
