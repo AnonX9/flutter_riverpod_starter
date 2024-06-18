@@ -3,9 +3,6 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'package_info.g.dart';
 
-/// Riverpod provider for retrieving package information.
-@riverpod
-
 /// Provider for retrieving package information.
 ///
 /// This provider provides a [Future] that resolves to a [PackageInfo] object

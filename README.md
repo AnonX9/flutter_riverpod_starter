@@ -1,16 +1,121 @@
-# flutter_riverpod_starter
+# Project: Flutter Riverpod Starter
 
-A new Flutter project.
+This is a Flutter application that serves as a starter template for using Riverpod in Flutter. It provides a basic structure and setup for using Riverpod, a state management solution for Flutter.
+
+## Table of Contents
+
+- [Features](#features)
+- [Getting Started](#getting-started)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Features
+
+- State management using Riverpod
+- Provider for retrieving package information
+- Logging provider observer
+- Responsive design using Sizer widget
+- Error handling for Dio requests
+- Basic UI using Flutter widgets
+- Network connectivity check
+- Local Database using ObjectBox
+- Easy Internationalization
+- Router using Go_Router
+- Customizable theme ( light / dark ) with FlexSchemeTheme
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+To get started with this project, follow these steps :
 
-A few resources to get you started if this is your first Flutter project:
+1. Clone the repository:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+    ```bash
+    git clone https://github.com/AnonX9/flutter_riverpod_starter.git --branch with_easy_l10n
+    ```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+2. Change into the project directory:
+
+    ```bash
+    cd flutter_riverpod_starter
+    ```
+
+3. Install dependencies:
+
+    ```bash
+    flutter pub get
+    ```
+
+4. Generate all rivepod files:
+
+    ```bash
+    dart build_runner build --delete-conflicting-outputs
+    ```
+
+5. Generate documentation files:
+
+    ```bash
+    flutter pub get
+    dart doc .
+    ```
+
+    You should see the following message at the end:
+
+    ```text
+    Success! Docs generated into /Users/me/projects/my_package/doc/api
+    ```
+
+    Now, to see the documentation, use the following commands:
+
+    ```bash
+    dart pub global activate dhttpd
+    dart pub global run dhttpd --path doc/api
+    ```
+
+## Usage
+
+This application is meant to be a starter pack for any 'real-world' application developped in flutter.
+It offers basic features that are usually needed in applications along with a documentation.
+
+## Contributing
+
+Contributions are always welcome! Or you can simply make this whole project your own.If you'd like to contribute to this project, follow these steps:
+
+1. Fork the repository:
+
+   - Go to [https://github.com/your-username/flutter_riverpod_starter](https://github.com/your-username/flutter_riverpod_starter)
+   - Click on the "Fork" button in the top-right corner
+   - Choose your GitHub account where you want to fork the repository
+
+2. Clone the forked repository:
+
+   ```bash
+   git clone https://github.com/your-username/flutter_riverpod_starter.git
+   ```
+
+3. Create a new branch:
+
+    ```bash
+    git checkout -b feature/my-new-feature
+    ```
+
+4. Make your changes and commit them:
+
+    ```bash
+    git add .
+    git commit -m "Add a brief description of your changes"
+    ```
+
+5. Push your changes to your forked repository:
+
+    ```bash
+    git push origin feature/my-new-feature
+    ```
+
+6. Submit your pull request and we could review it together ! ✨
+
+## Licence
+
+This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
+
+Thank you for using the Flutter Riverpod Starter project! If you have or feedback, please feel free to reach out.
