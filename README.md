@@ -121,7 +121,7 @@ Contributions are always welcome! Or you can simply make this whole project your
 
 6. Submit your pull request and we could review it together ! ✨
 
-## Licence
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
 
